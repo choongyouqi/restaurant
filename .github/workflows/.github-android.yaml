@@ -39,17 +39,13 @@ jobs:
           arguments: assembleRelease
 #      - name: Run Kotlin Linter
 #        run: ./gradlew ktlintStagingDebugCheck
-      - name: Post Checking
-        run: pwd
       - name: Post Checking 2
         run: |
+          pwd
+          chmod +x gradlew
           ls -al
           ls -al ${{ github.workspace }}/app/build
           ls -al app/build
-      - run: |
-          which gradlew
-          pwd
-          chmod +x gradlew
       - name: Run Unit Tests
         run: ./gradlew testStagingDebugUnitTest
       - name: Run Connected Test
