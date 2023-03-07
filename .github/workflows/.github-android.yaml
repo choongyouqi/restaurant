@@ -13,7 +13,7 @@ jobs:
           echo "github ${{ toJSON(github) }}"
       - run: export
       - name: Check Java
-      - run: |
+        run: |
           which java
           java -version
       - run: |
