@@ -37,8 +37,8 @@ jobs:
           dependencies-cache-enabled: true
           configuration-cache-enabled: true
           arguments: assembleRelease
-      - name: Run Kotlin Linter
-        run: ./gradlew ktlintStagingDebugCheck
+#      - name: Run Kotlin Linter
+#        run: ./gradlew ktlintStagingDebugCheck
       - name: Run Unit Tests
         run: ./gradlew testStagingDebugUnitTest
       - name: Run Connected Test

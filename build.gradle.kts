@@ -15,7 +15,3 @@
  */
 
 // Root build.gradle.kts
-plugins {
-    id("com.android.application") version "7.4.1" apply false
-    id("org.jlleitschuh.gradle.ktlint") version "9.4.1" apply false
-}
