@@ -42,7 +42,10 @@ jobs:
       - name: Post Checking
         run: pwd
       - name: Post Checking 2
-        run: ls -al ${{ github.workspace }}/app/build
+        run: |
+          ls -al
+          ls -al ${{ github.workspace }}/app/build
+          ls -al app/build
       - run: |
           which gradlew
           pwd
