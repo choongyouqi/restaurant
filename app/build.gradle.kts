@@ -21,6 +21,7 @@ plugins {
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.hilt.gradle)
     alias(libs.plugins.ksp)
+    id("org.jlleitschuh.gradle.ktlint")
 }
 
 android {
@@ -49,6 +50,22 @@ android {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+    }
+
+    flavorDimensions.add("environment")
+
+    productFlavors {
+        create("development") {
+            dimension = "environment"
+        }
+
+        create("staging") {
+            dimension = "environment"
+        }
+
+        create("production") {
+            dimension = "environment"
         }
     }
 
