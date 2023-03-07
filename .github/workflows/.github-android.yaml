@@ -12,10 +12,28 @@ jobs:
           echo "runner ${{ toJSON(runner) }}"
           echo "github ${{ toJSON(github) }}"
       - run: export
+      - run: which java
       - run: |
           echo "🔎🔍 The name of your branch is ${{ github }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v3
+      - name: Set up our JDK environment
+        uses: actions/setup-java@v1.4.3
+        with:
+          java-version: 1.8
+      - name: Build all artifacts
+        id: buildAllApks
+        uses: eskatos/gradle-command-action@v1.3.3
+        with:
+          gradle-version: current
+          wrapper-cache-enabled: true
+          dependencies-cache-enabled: true
+          configuration-cache-enabled: true
+          arguments: assembleRelease
+      - name: Run Kotlin Linter
+        run: ./gradlew ktlintStagingDebugCheck
+      - name: Run Unit Tests
+        run: ./gradlew testStagingDebugUnitTest
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
