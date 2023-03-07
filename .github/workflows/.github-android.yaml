@@ -2,15 +2,15 @@ name: Android Workflow
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [ push ]
 jobs:
-  Explore-GitHub-Actions:
+  Android-Job-Name-Here:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - name: List files in the repository
+      - name: List Variables
         run: |
-          echo "github ${{ toJSON(github) }}"
           echo "runner ${{ toJSON(runner) }}"
+          echo "github ${{ toJSON(github) }}"
       - run: export
       - run: |
           echo "🔎🔍 The name of your branch is ${{ github }} and your repository is ${{ github.repository }}."
