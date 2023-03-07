@@ -39,6 +39,10 @@ jobs:
           arguments: assembleRelease
 #      - name: Run Kotlin Linter
 #        run: ./gradlew ktlintStagingDebugCheck
+      - run: |
+          which gradlew
+          pwd
+          chmod +x gradlew
       - name: Run Unit Tests
         run: ./gradlew testStagingDebugUnitTest
       - name: Run Connected Test
