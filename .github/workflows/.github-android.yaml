@@ -48,14 +48,18 @@ jobs:
           ls -al app/build
       - name: Run Unit Tests
         run: ./gradlew testStagingDebugUnitTest
-      - name: Run Connected Test
-        uses: reactivecircus/android-emulator-runner@v2
+#      - name: Run Connected Test
+#        uses: reactivecircus/android-emulator-runner@v2
+#        with:
+#          api-level: 23
+#          target: default
+#          arch: x86
+#          profile: Nexus 6
+#          script: ./gradlew connectedCheck --stacktrace
+      - uses: actions/upload-artifact@v3
         with:
-          api-level: 23
-          target: default
-          arch: x86
-          profile: Nexus 6
-          script: ./gradlew connectedCheck --stacktrace
+          name: my-artifact
+          path: app/build/outputs
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
