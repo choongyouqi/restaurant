@@ -72,6 +72,7 @@ jobs:
     name: Push to Docker Hub
     needs: assemble
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
