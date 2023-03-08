@@ -75,9 +75,9 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - name: Post Checking 2
-          run: |
-            pwd
-            chmod +x gradlew
-            ls -al
-            ls -al ${{ github.workspace }}/app/build
-            ls -al app/build/outputs
+        run: |
+          pwd
+          chmod +x gradlew
+          ls -al
+          ls -al ${{ github.workspace }}/app/build
+          ls -al app/build/outputs
