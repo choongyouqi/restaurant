@@ -1,6 +1,6 @@
 name: Android Workflow
 run-name: ${{ github.actor }} is testing out GitHub Actions 🤖
-on: [push, pull_request]
+on: [ push, pull_request ]
 jobs:
   assemble:
     runs-on: ubuntu-latest
@@ -29,6 +29,13 @@ jobs:
         run: |
           which java
           java -version
+      - name: Pre Checking 1
+        run: |
+          pwd
+          chmod +x gradlew
+          ls -al
+          ls -al ${{ github.workspace }}/app/build
+          ls -al app/build
       - name: Run Kotlin Linter
         run: ./gradlew ktlintStagingDebugCheck
       - name: Build all artifacts
@@ -49,14 +56,14 @@ jobs:
           ls -al app/build
       - name: Run Unit Tests
         run: ./gradlew testStagingDebugUnitTest
-#      - name: Run Connected Test
-#        uses: reactivecircus/android-emulator-runner@v2
-#        with:
-#          api-level: 23
-#          target: default
-#          arch: x86
-#          profile: Nexus 6
-#          script: ./gradlew connectedCheck --stacktrace
+      #      - name: Run Connected Test
+      #        uses: reactivecircus/android-emulator-runner@v2
+      #        with:
+      #          api-level: 23
+      #          target: default
+      #          arch: x86
+      #          profile: Nexus 6
+      #          script: ./gradlew connectedCheck --stacktrace
       - uses: actions/upload-artifact@v3
         with:
           name: my-artifact
