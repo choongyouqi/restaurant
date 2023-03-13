@@ -35,7 +35,7 @@ jobs:
           chmod +x gradlew
           ls -al
       - name: Run Kotlin Linter
-        run: ./gradlew ktlintStagingDebugCheck
+        run: ./gradlew ktlintCheck
       - name: Build all artifacts
         id: buildAllApks
         uses: gradle/gradle-build-action@v2.4.0
