@@ -16,20 +16,20 @@
 
 package com.setel.restaurant.testdi
 
+import com.setel.restaurant.data.OperatingHoursRepository
+import com.setel.restaurant.data.di.DataModule
+import com.setel.restaurant.data.di.FakeOperatingHoursRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.components.SingletonComponent
 import dagger.hilt.testing.TestInstallIn
-import com.setel.restaurant.data.OperatingHoursRepository
-import com.setel.restaurant.data.di.DataModule
-import com.setel.restaurant.data.di.FakeOperatingHoursRepository
 
 @Module
 @TestInstallIn(
     components = [SingletonComponent::class],
     replaces = [DataModule::class]
 )
-interface FakeDataModule {
+interface TestDatabaseModule {
 
     @Binds
     abstract fun bindRepository(

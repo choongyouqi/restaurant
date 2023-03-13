@@ -18,11 +18,11 @@ package com.setel.restaurant.ui
 
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithText
+import com.setel.restaurant.data.di.fakeOperatingHourss
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Rule
 import org.junit.Test
-import com.setel.restaurant.data.di.fakeOperatingHourss
 
 @HiltAndroidTest
 class NavigationTest {
@@ -39,4 +39,3 @@ class NavigationTest {
         composeTestRule.onNodeWithText(fakeOperatingHourss.first(), substring = true).assertExists()
     }
 }
-

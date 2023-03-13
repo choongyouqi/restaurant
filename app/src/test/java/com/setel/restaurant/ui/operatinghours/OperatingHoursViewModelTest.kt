@@ -16,7 +16,7 @@
 
 package com.setel.restaurant.ui.operatinghours
 
-
+import com.setel.restaurant.data.OperatingHoursRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
@@ -24,7 +24,6 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import com.setel.restaurant.data.OperatingHoursRepository
 
 /**
  * Example local unit test, which will execute on the development machine (host).

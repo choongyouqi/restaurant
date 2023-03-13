@@ -16,6 +16,8 @@
 
 package com.setel.restaurant.data
 
+import com.setel.restaurant.data.local.database.OperatingHours
+import com.setel.restaurant.data.local.database.OperatingHoursDao
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
@@ -23,8 +25,6 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Test
-import com.setel.restaurant.data.local.database.OperatingHours
-import com.setel.restaurant.data.local.database.OperatingHoursDao
 
 /**
  * Unit tests for [DefaultOperatingHoursRepository].
@@ -40,7 +40,6 @@ class DefaultOperatingHoursRepositoryTest {
 
         assertEquals(repository.operatingHourss.first().size, 1)
     }
-
 }
 
 private class FakeOperatingHoursDao : OperatingHoursDao {
