@@ -34,8 +34,6 @@ jobs:
           pwd
           chmod +x gradlew
           ls -al
-          ls -al ${{ github.workspace }}/app/build
-          ls -al app/build
       - name: Run Kotlin Linter
         run: ./gradlew ktlintStagingDebugCheck
       - name: Build all artifacts
